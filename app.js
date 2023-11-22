@@ -1,4 +1,5 @@
 // const fs = require("fs");
+// const chalk=require('chalk')
 // fs.writeFileSync("note.txt", "Node.js The complete developer course");
 // fs.appendFileSync(
 //   "note.txt",
@@ -31,6 +32,55 @@
 
 // log(chalk.blue('Hello', 'World!', 'saroj', 'satich'));
 
-
-
 // ************** Command Line Argument **************
+
+// console.log(process.argv);
+
+// const command = process.argv[2];
+
+// console.log(command);
+
+// if (command === "add") {
+//   console.log("Adding note ✅");
+// } else if (command === "remove") {
+//   console.log("Removing note ❌");
+// }
+
+// Using a new package for work with command arguments easily
+
+const yargs = require("yargs");
+
+console.log(process.argv);
+console.log(yargs.argv);
+
+yargs.command({
+  command: "add",
+  describe: "Adding a new note",
+  handler: function () {
+    console.log("Adding a new note");
+  },
+}).argv;
+
+yargs.command({
+  command: "remove",
+  describe: "Removing a note",
+  handler: function () {
+    console.log("Removing a new note");
+  },
+}).argv;
+
+yargs.command({
+  command: "read",
+  describe: "Reading a note",
+  handler: function () {
+    console.log("Reading a note");
+  },
+}).argv;
+
+yargs.command({
+  command: "list",
+  describe: "Listing the notes",
+  handler: function () {
+    console.log("Listing the notes");
+  },
+}).argv;
