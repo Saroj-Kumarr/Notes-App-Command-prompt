@@ -11,8 +11,26 @@
 
 // console.log(msg);
 
-const validator=require('validator');
+// **************** Validator Package ************
 
-console.log(validator.isEmail('saroj@gmail.com'));
+// const validator = require("validator");
 
-console.log(validator.isURL('www.saroj.in'))
+// console.log(validator.isEmail("saroj@gmail.com"));
+
+// console.log(validator.isURL("www.saroj.in"));
+
+// ***************  Chalk Package *****************
+
+// npm i chalk
+
+// const log = console.log;
+
+// log(chalk.blue('Hello') + ' World' + chalk.red('!'));
+
+// log(chalk.blue.bgRed.bold('Hello world!'));
+
+// log(chalk.blue('Hello', 'World!', 'saroj', 'satich'));
+
+
+
+// ************** Command Line Argument **************
