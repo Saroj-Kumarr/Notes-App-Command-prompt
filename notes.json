@@ -1,12 +1,1 @@
-[
-  { "title": "Node.js", "body": "Learning node.js the complete developer" },
-  {
-    "title": "Express.js",
-    "body": "Learning Express.js the complete developer"
-  },
-  {
-    "title": "Javascript",
-    "body": "Learning Javascript from jonas schmedemntan"
-  },
-  { "title": "React.js", "body": "Learning React.js from namaste react course" }
-]
+[{"title":"t","body":"b"},{"title":"Course ideas","body":""}]
