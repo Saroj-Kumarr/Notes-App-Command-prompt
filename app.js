@@ -49,38 +49,51 @@
 // Using a new package for work with command arguments easily
 
 const yargs = require("yargs");
+const addNote = require("./utility");
 
-console.log(process.argv);
-console.log(yargs.argv);
+// console.log(process.argv);
+// console.log(yargs.argv);
 
 yargs.command({
   command: "add",
   describe: "Adding a new note",
-  handler: function () {
-    console.log("Adding a new note");
+  builder: {
+    title: {
+      describe: "No title",
+      demandOption: true,
+      type: "string",
+    },
+    body: {
+      describe: "No body",
+      demandOption: true,
+      type: "string",
+    },
+  },
+  handler: function (argv) {
+    addNote(argv.title, argv.body);
   },
 }).argv;
 
-yargs.command({
-  command: "remove",
-  describe: "Removing a note",
-  handler: function () {
-    console.log("Removing a new note");
-  },
-}).argv;
+// yargs.command({
+//   command: "remove",
+//   describe: "Removing a note",
+//   handler: function () {
+//     console.log("Removing a new note");
+//   },
+// }).argv;
 
-yargs.command({
-  command: "read",
-  describe: "Reading a note",
-  handler: function () {
-    console.log("Reading a note");
-  },
-}).argv;
+// yargs.command({
+//   command: "read",
+//   describe: "Reading a note",
+//   handler: function () {
+//     console.log("Reading a note");
+//   },
+// }).argv;
 
-yargs.command({
-  command: "list",
-  describe: "Listing the notes",
-  handler: function () {
-    console.log("Listing the notes");
-  },
-}).argv;
+// yargs.command({
+//   command: "list",
+//   describe: "Listing the notes",
+//   handler: function () {
+//     console.log("Listing the notes");
+//   },
+// }).argv;
