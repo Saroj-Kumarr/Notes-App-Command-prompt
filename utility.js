@@ -34,4 +34,34 @@ const loadNotes = () => {
   }
 };
 
+const removeNote = (title) => {
+  const notes = loadNotes();
+  const notesToKeep = notes.filter((note) => {
+    if (note.title === title) {
+      return false;
+    } else {
+      return true;
+    }
+  });
+  saveNotes(notesToKeep);
+};
+
+const listNotes = () => {
+  const notes = loadNotes();
+  notes.map((note) => {
+    console.log(note);
+  });
+};
+
+const readNote = (title) => {
+  const notes = loadNotes();
+  const noteToKeep = notes.filter((note) => {
+    return note.title === title;
+  });
+  console.log(noteToKeep);
+};
+
 module.exports = addNote;
+module.exports = removeNote;
+module.exports = listNotes;
+module.exports = readNote;
